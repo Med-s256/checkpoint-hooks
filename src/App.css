@@ -1,31 +1,81 @@
-.App {
+.content {
+  background-color: #f1a90d;
+  width: 88%;
+  margin: auto;
+  text-align: center;
+  color: rgb(40, 3, 109);
+}
+.gold{
+  font-size: 25px;
+  color: gold;
+}
+.star{
+  font-size: 25px;
+  
+  cursor: pointer;
+}
+.golder{
+  font-size: 25px;
+  color: gold;
+  cursor: pointer;
+}
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 5mm;
+}
+.input {
+  width: 80%;
+}
+.filter{
+  display: flex;
+  flex-direction: row;
+  margin-left:200mm;
+  align-items: center;
+  padding-bottom: 5mm;
+  gap: 5mm;
+  padding-top: 5mm;
+  font-size: 25px;
+}
+.sous-list {
+  display: grid;
+  grid-template-columns: 1fr ;
+  width: 100%;
+  margin-left: 5mm;
+  align-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.trd{
+text-align: center; 
+}
+.lcard{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5mm;
+  align-content: space-around;
+  width: 90%;
+  margin: auto;
+  padding-top: 5mm;
+  padding-bottom: 5mm;
+  
+}
+.card{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border: solid;
+  border-color: black;
+  /*background-color: rgb(204, 187, 113);*/
+  margin: auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
