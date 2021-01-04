@@ -60,6 +60,17 @@ text-align: center;
   padding-bottom: 5mm;
   
 }
+.btn-back{
+  width: 30%;
+  color: white;
+  background-color: red;
+  margin: auto;
+  margin-top: 5mm;
+  margin-bottom: 5mm;
+  border-radius: 7px;
+  font-weight: bold;
+  height:30px;
+}
 .card{
   color: black;
   display: flex;
@@ -68,6 +79,14 @@ text-align: center;
   border: solid;
   border-color: black;
   /*background-color: rgb(204, 187, 113);*/
+  margin: auto;
+  text-align: center;
+}
+.card1{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
   margin: auto;
   text-align: center;
 }

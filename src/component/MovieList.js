@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { starList } from "../Data";
 import MovieCard from "./MovieCard";
-
 const MovieList = ({ movieList }) => {
   const [search, setSearch] = useState("");
   const [star, setStar] = useState(starList);
@@ -29,10 +29,22 @@ const MovieList = ({ movieList }) => {
         <h1 className="content">My movies</h1>
       </div>
       <div className="lcard">
-        {movieList.filter(movie=>movie.title.toUpperCase().includes(search.toUpperCase())).filter(movie=>movie.rate>=star.filter(el=>el.isColored===true).length).map((movie, index) => (
-          <MovieCard movie={movie} key={index} />
-        ))}
+        {movieList.filter(movie=>movie.title.toUpperCase().includes(search.toUpperCase())).filter(movie=>
+          movie.rate>=star.filter(el=>el.isColored===true).length).map(movie=><div key={movie.id}> 
+          <Link to={`/${movie.id}`}> <MovieCard movie={movie} key={movie.id} /></Link>
+        </div>)}
       </div>
+      <div style={{textAlign:'center', marginBottom:'10mm'}}>
+      <Link to={`/add`}><button style={{
+              color: "white",
+              fontSize:'20px',
+              backgroundColor: "green",
+              borderRadius: "5px",
+              width: '10%',
+              margin:'auto',
+              height:'30px'
+            }}>new movie</button></Link>
+            </div>
     </div>
   );
 };

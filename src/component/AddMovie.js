@@ -1,21 +1,30 @@
-
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 const AddMovie = ({ addMovie }) => {
   const [title, setTitle] = useState("");
   const [rate, setRate] = useState("");
+  const [id, setId] = useState("");
   const [posteUrl, setPosteUrl] = useState("");
   const [description, setDescription] = useState("");
+  const [triler, setTriler] = useState("");
+
   const changeTitle = (e) => {
     setTitle(e.target.value);
   };
   const changeRate = (e) => {
     setRate(e.target.value);
   };
+  const changeId = (e) => {
+    setId(e.target.value);
+  };
   const changeUrl = (e) => {
     setPosteUrl(e.target.value);
   };
   const changeDescription = (e) => {
     setDescription(e.target.value);
+  };
+  const changeTriler = (e) => {
+    setTriler(e.target.value);
   };
   return (
     <div>
@@ -41,6 +50,15 @@ const AddMovie = ({ addMovie }) => {
               placeholder="enter the Rate of your"
               onChange={changeRate}
             />
+            
+            <span style={{ fontWeight: "bold" }}>id:</span>
+            <input
+              type="number"
+              className="input"
+              value={id}
+              placeholder="enter the Id of your"
+              onChange={changeId}
+            />
           </div>
           <div className="sous-list">
             <label style={{ fontWeight: "bold" }}>posteURL:</label>
@@ -51,6 +69,15 @@ const AddMovie = ({ addMovie }) => {
               value={posteUrl}
               placeholder="enter the URL of your new movie"
               onChange={changeUrl}
+            />
+              <label style={{ fontWeight: "bold" }}>Trailer:</label>
+            <textarea
+              cols="1"
+              rows="3"
+              className="input"
+              value={triler}
+              placeholder="Trailer movie"
+              onChange={changeTriler}
             />
           </div>
           <div className="sous-list">
@@ -66,16 +93,17 @@ const AddMovie = ({ addMovie }) => {
           </div>
         </div>
         <div style={{ textAlign: "center", paddingBottom: "5mm" }}>
-          <button
-            onClick={()=>addMovie(title, posteUrl, description, rate)}
+          <Link to={`/`}><button
+            onClick={()=>addMovie(title, posteUrl, description, rate,id, triler)}
             style={{
               color: "white",
               backgroundColor: "green",
               borderRadius: "5px",
+              height:'30px'
             }}
           >
             Add movie
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>
